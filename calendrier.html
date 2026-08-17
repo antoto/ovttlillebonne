@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendrier — OVTT Lillebonne</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<div class="page-banner">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html" style="color:inherit;">Accueil</a> / Calendrier</div>
+    <h1>Calendrier du club</h1>
+    <p>Coupes de France, Coupes de Normandie, championnats et entraînements : tout le calendrier de l'OVTT Lillebonne.</p>
+  </div>
+</div>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="filter-bar reveal">
+      <button class="filter-chip active" data-type="Tous">Tous</button>
+      <button class="filter-chip" data-type="Coupe de France">Coupe de France</button>
+      <button class="filter-chip" data-type="Coupe de Normandie">Coupe de Normandie</button>
+      <button class="filter-chip" data-type="Championnat">Championnat</button>
+      <button class="filter-chip" data-type="Entraînement">Entraînement</button>
+      <button class="filter-chip" data-type="Autre">Autre</button>
+    </div>
+
+    <div class="event-list" id="calendar-list">
+      <div class="empty-state">Chargement du calendrier…</div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+<script src="js/firebase.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

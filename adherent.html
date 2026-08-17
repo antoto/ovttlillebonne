@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espace adhérent — OVTT Lillebonne</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header"></header>
+
+<div class="page-banner">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html" style="color:inherit;">Accueil</a> / Espace adhérent</div>
+    <h1>Espace adhérent</h1>
+    <p>Bulletin d'adhésion 2027, informations d'urgence, santé et démarches de licence : complétez votre dossier en ligne, le règlement se fait ensuite en présentiel au local du club.</p>
+  </div>
+</div>
+
+<section class="section">
+
+    <div class="form-steps reveal">
+      <div class="form-step-dot active">1. Bulletin 2027</div>
+      <div class="form-step-dot">2. Urgence</div>
+      <div class="form-step-dot">3. Santé &amp; autorisations</div>
+      <div class="form-step-dot">4. Licence &amp; contacts</div>
+    </div>
+
+    <form id="adherent-form" class="form-card reveal">
+
+      <!-- ===================== PAGE 1 — BULLETIN D'ADHÉSION 2027 ===================== -->
+      <div class="form-panel active">
+        <div class="eyebrow">Objectif VTT 1988</div>
+        <h2>Bulletin d'adhésion 2027</h2>
+
+        <div class="field" style="margin-top:22px;">
+          <label>L'adhérent est :</label>
+          <div class="radio-row">
+            <label><input type="radio" name="statut_civil" value="Majeur" required> Majeur</label>
+            <label><input type="radio" name="statut_civil" value="Mineur"> Mineur</label>
+          </div>
+          <span class="hint">Ce choix affiche automatiquement les informations et autorisations propres aux mineurs sur l'ensemble du dossier.</span>
+        </div>
+
+        <h3 style="margin-top:20px; margin-bottom:14px; font-size:1.05rem;">L'adhérent</h3>
+        <div class="form-grid">
+          <div class="field"><label>Nom</label><input type="text" name="adherent_nom" required></div>
+          <div class="field"><label>Prénom</label><input type="text" name="adherent_prenom" required></div>
+          <div class="field"><label>Date de naissance</label><input type="date" name="adherent_date_naissance" required></div>
+          <div class="field">
+            <label>Adhérent en 2026</label>
+            <div class="radio-row">
+              <label><input type="radio" name="adherent_2026" value="OUI" required> OUI</label>
+              <label><input type="radio" name="adherent_2026" value="NON"> NON</label>
+            </div>
+          </div>
+          <div class="field" style="grid-column:1/-1;"><label>Adresse</label><input type="text" name="adherent_adresse" required></div>
+          <div class="field"><label>N° Téléphone</label><input type="tel" name="adherent_telephone" required></div>
+          <div class="field"><label>E-Mail</label><input type="email" name="adherent_email" required></div>
+        </div>
+
+        <!-- ============ Bloc visible uniquement si l'adhérent est MINEUR ============ -->
+        <div class="minor-only">
+          <h3 style="margin-top:24px; margin-bottom:14px; font-size:1.05rem;">Les parents <span class="hint">(obligatoire pour les mineurs)</span></h3>
+
+          <p style="font-weight:700; margin-bottom:10px;">Parent 1</p>
+          <div class="form-grid">
+            <div class="field"><label>Nom</label><input type="text" name="parent1_nom" data-required-if-minor></div>
+            <div class="field"><label>Prénom</label><input type="text" name="parent1_prenom" data-required-if-minor></div>
+            <div class="field" style="grid-column:1/-1;"><label>Adresse</label><input type="text" name="parent1_adresse"></div>
+            <div class="field"><label>Téléphone</label><input type="tel" name="parent1_telephone" data-required-if-minor></div>
+            <div class="field"><label>Email</label><input type="email" name="parent1_email"></div>
+            <div class="field"><label>Profession</label><input type="text" name="parent1_profession"></div>
+          </div>
+
+          <p style="font-weight:700; margin:18px 0 10px;">Parent 2</p>
+          <div class="form-grid">
+            <div class="field"><label>Nom</label><input type="text" name="parent2_nom"></div>
+            <div class="field"><label>Prénom</label><input type="text" name="parent2_prenom"></div>
+            <div class="field" style="grid-column:1/-1;"><label>Adresse</label><input type="text" name="parent2_adresse"></div>
+            <div class="field"><label>Téléphone</label><input type="tel" name="parent2_telephone"></div>
+            <div class="field"><label>Email</label><input type="email" name="parent2_email"></div>
+            <div class="field"><label>Profession</label><input type="text" name="parent2_profession"></div>
+          </div>
+
+          <div class="field">
+            <label>L'ensemble des informations seront transmises :</label>
+            <div class="radio-row">
+              <label><input type="radio" name="destinataire_infos" value="Parent 1"> Au Parent 1</label>
+              <label><input type="radio" name="destinataire_infos" value="Parent 2"> Au Parent 2</label>
+              <label><input type="radio" name="destinataire_infos" value="Les deux parents"> Aux deux parents</label>
+            </div>
+          </div>
+
+          <div class="signature-box">Signature des parents</div>
+          <div class="field" style="margin-top:14px;"><input type="text" name="signature_parents" placeholder="Nom et mention « lu et approuvé »"></div>
+        </div>
+        <!-- ============ Fin du bloc mineur ============ -->
+
+        <div class="form-nav">
+          <span></span>
+          <button type="button" class="btn btn-primary" data-next>Urgence →</button>
+        </div>
+      </div>
+
+      <!-- ===================== PAGE 2 — APPEL EN CAS D'URGENCE ===================== -->
+      <div class="form-panel">
+        <div class="eyebrow">Objectif VTT 1988</div>
+        <h2>Appel en cas d'urgence</h2>
+
+        <div class="form-grid" style="margin-top:20px;">
+          <div class="field"><label>Nom de l'adhérent</label><input type="text" name="urgence_adherent_nom"></div>
+          <div class="field"><label>Prénom de l'adhérent</label><input type="text" name="urgence_adherent_prenom"></div>
+        </div>
+
+        <h3 style="margin:20px 0 4px; font-size:1.05rem;">Coordonnées des personnes par ordre de priorité</h3>
+        <p class="hint" style="margin-bottom:14px;">(obligatoire pour les mineurs)</p>
+
+        <p style="font-weight:700; margin-bottom:8px;">Contact 1</p>
+        <div class="form-grid">
+          <div class="field"><label>Lien de parenté</label><input type="text" name="urgence1_lien"></div>
+          <div class="field"><label>Nom</label><input type="text" name="urgence1_nom"></div>
+          <div class="field"><label>Prénom</label><input type="text" name="urgence1_prenom"></div>
+          <div class="field"><label>N° Téléphone</label><input type="tel" name="urgence1_telephone"></div>
+        </div>
+
+        <p style="font-weight:700; margin:16px 0 8px;">Contact 2</p>
+        <div class="form-grid">
+          <div class="field"><label>Lien de parenté</label><input type="text" name="urgence2_lien"></div>
+          <div class="field"><label>Nom</label><input type="text" name="urgence2_nom"></div>
+          <div class="field"><label>Prénom</label><input type="text" name="urgence2_prenom"></div>
+          <div class="field"><label>N° Téléphone</label><input type="tel" name="urgence2_telephone"></div>
+        </div>
+
+        <p style="font-weight:700; margin:16px 0 8px;">Contact 3</p>
+        <div class="form-grid">
+          <div class="field"><label>Lien de parenté</label><input type="text" name="urgence3_lien"></div>
+          <div class="field"><label>Nom</label><input type="text" name="urgence3_nom"></div>
+          <div class="field"><label>Prénom</label><input type="text" name="urgence3_prenom"></div>
+          <div class="field"><label>N° Téléphone</label><input type="tel" name="urgence3_telephone"></div>
+        </div>
+
+        <div class="field">
+          <label>Observations — problèmes particuliers</label>
+          <textarea name="urgence_observations" rows="4"></textarea>
+        </div>
+
+        <div class="form-nav">
+          <button type="button" class="btn btn-outline" data-prev>← Bulletin 2027</button>
+          <button type="button" class="btn btn-primary" data-next>Santé &amp; autorisations →</button>
+        </div>
+      </div>
+
+      <!-- ===================== PAGE 3 — SANTÉ ET PRÉCONISATIONS / AUTORISATIONS ===================== -->
+      <div class="form-panel">
+        <div class="eyebrow">Confidentiel</div>
+        <h2>Santé et préconisations</h2>
+
+        <div class="form-grid" style="margin-top:20px;">
+          <div class="field">
+            <label>L'enfant est-il à jour de ses vaccinations ?</label>
+            <div class="radio-row">
+              <label><input type="radio" name="vaccinations_a_jour" value="Oui"> OUI</label>
+              <label><input type="radio" name="vaccinations_a_jour" value="Non"> NON</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>L'enfant suit-il un traitement médical ?</label>
+            <div class="radio-row">
+              <label><input type="radio" name="traitement_medical" value="Oui"> OUI</label>
+              <label><input type="radio" name="traitement_medical" value="Non"> NON</label>
+            </div>
+          </div>
+        </div>
+        <div class="field"><label>Si oui, précisez</label><textarea name="traitement_medical_details" rows="2"></textarea></div>
+
+        <div class="field">
+          <label>L'enfant est-il allergique ?</label>
+          <div class="radio-row">
+            <label><input type="radio" name="allergies" value="Oui"> OUI</label>
+            <label><input type="radio" name="allergies" value="Non"> NON</label>
+          </div>
+        </div>
+        <div class="field"><label>Si oui, précisez</label><textarea name="allergies_details" rows="2"></textarea></div>
+
+        <div class="field"><label>Personne à prévenir en cas d'urgence (Nom, Prénom, Coordonnées)</label><input type="text" name="personne_a_prevenir"></div>
+
+        <h3 style="margin:22px 0 14px; font-size:1.05rem;">Autorisations</h3>
+
+        <!-- ============ Bloc visible uniquement si l'adhérent est MINEUR ============ -->
+        <div class="minor-only">
+          <div class="info-block">
+            <h3 style="font-size:0.98rem;">Pour les mineurs</h3>
+            <div class="field" style="margin-top:12px;">
+              <label>J'autorise mon enfant à rentrer seul après la sortie d'entraînement ?</label>
+              <div class="radio-row">
+                <label><input type="radio" name="autorisation_rentrer_seul" value="Oui"> OUI</label>
+                <label><input type="radio" name="autorisation_rentrer_seul" value="Non"> NON</label>
+              </div>
+            </div>
+
+            <div class="legal-text" style="margin-top:14px;">
+              Je soussigné(e), Mr ou Mme <input type="text" name="decharge_responsable" placeholder="Nom du responsable légal" style="width:220px; display:inline-block; border:none; border-bottom:1.5px solid var(--c-border); background:transparent; padding:2px 4px;">
+              responsable légal(e) de l'enfant <input type="text" name="decharge_enfant" placeholder="Nom de l'enfant" style="width:220px; display:inline-block; border:none; border-bottom:1.5px solid var(--c-border); background:transparent; padding:2px 4px;">
+              déchargeons de toutes responsabilités le club et les encadrants, de tous accidents ou incidents survenant avant ou après les sorties encadrées par le club.
+            </div>
+            <div class="form-grid" style="margin-top:14px;">
+              <div class="field"><label>Date</label><input type="date" name="date_decharge"></div>
+              <div class="field"><label>Signature</label><input type="text" name="signature_decharge" placeholder="Nom et mention « lu et approuvé »"></div>
+            </div>
+          </div>
+        </div>
+        <!-- ============ Fin du bloc mineur ============ -->
+
+        <div class="info-block turquoise" style="margin-top:20px;">
+          <h3 style="font-size:0.98rem;">Pour tous</h3>
+          <div class="field" style="margin-top:12px;">
+            <div class="radio-row">
+              <label><input type="radio" name="droit_image" value="J'autorise"> J'autorise</label>
+              <label><input type="radio" name="droit_image" value="Je n'autorise pas"> Je n'autorise pas</label>
+            </div>
+            <span class="hint">le club à utiliser, exploiter à titre gracieux mon image, ou celle de mon enfant dans le cadre de la promotion de ses activités, sur ses réseaux sociaux ou sur tous autres supports sans limitation de durée.</span>
+          </div>
+          <div class="form-grid" style="margin-top:12px;">
+            <div class="field"><label>Date</label><input type="date" name="date_droit_image"></div>
+            <div class="field"><label>Signature</label><input type="text" name="signature_droit_image" placeholder="Nom et mention « lu et approuvé »"></div>
+          </div>
+        </div>
+
+        <div class="form-nav">
+          <button type="button" class="btn btn-outline" data-prev>← Urgence</button>
+          <button type="button" class="btn btn-primary" data-next>Licence &amp; contacts →</button>
+        </div>
+      </div>
+
+      <!-- ===================== PAGE 4 — PRENDRE SA LICENCE / SPORTEASY / CONTACTS ===================== -->
+      <div class="form-panel">
+        <div class="eyebrow">Démarches</div>
+        <h2>Prendre sa licence</h2>
+        <p style="color:var(--c-ink-soft); margin-top:10px;">Inscription WEB sur l'espace licencié FFC</p>
+
+        <div class="info-block" style="margin-top:18px;">
+          <h3 style="font-size:0.98rem;">Pour un renouvellement de votre licence</h3>
+          <p>Votre compte existe déjà, il vous suffit de vous rendre sur le lien suivant, muni de votre identifiant et de votre mot de passe, puis de procéder au renouvellement sur « prendre ma licence 2024 ».</p>
+          <div class="link-card" style="margin-top:12px;">
+            <div><strong>licence.ffc.fr</strong><span>Renouvellement de licence</span></div>
+            <a href="https://licence.ffc.fr/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Renouveler ↗</a>
+          </div>
+          <p class="hint" style="margin-top:10px;">⚠️ Attention à bien vérifier la catégorie de la licence : pour les jeunes de U7 à U17, il faut prendre une licence JEUNESSE.</p>
+        </div>
+
+        <div class="info-block turquoise" style="margin-top:16px;">
+          <h3 style="font-size:0.98rem;">Pour les nouveaux licenciés</h3>
+          <p>Créez un compte, complétez toutes les pages et insérez les documents suivants :</p>
+          <ul>
+            <li>Certificat médical</li>
+            <li>Carte d'identité</li>
+            <li>Photo d'identité</li>
+          </ul>
+          <p style="margin-top:10px;">Retournez ensuite au secrétariat ce dossier papier accompagné du règlement. Une fois votre dossier complet, le club validera votre licence et la transmettra au Comité de Normandie. À l'inverse, le club vous contactera.</p>
+          <div class="link-card" style="margin-top:12px;">
+            <div><strong>licencie.ffc.fr</strong><span>Créer un compte</span></div>
+            <a href="https://licencie.ffc.fr/" target="_blank" rel="noopener" class="btn btn-sm btn-turquoise">Créer mon compte ↗</a>
+          </div>
+        </div>
+
+        <h3 style="margin:26px 0 14px; font-size:1.05rem;">SportEasy</h3>
+        <p style="color:var(--c-ink-soft);">Nous demandons à nos adhérents de nous rejoindre sur SportEasy. L'application vous permettra de voir les informations, les entraînements et les épreuves. Elle vous permettra aussi de notifier les présences et absences aux différents évènements du club. De plus, les convocations y seront envoyées.</p>
+
+        <div class="link-card" style="margin-top:14px;">
+          <div><strong>J'ai déjà un compte — Code équipe : PCRSTB9</strong><span>Je rejoins l'équipe en utilisant ce code</span></div>
+          <span class="badge-blue" style="font-weight:700;">PCRSTB9</span>
+        </div>
+        <div class="link-card">
+          <div><strong>Je n'ai pas de compte</strong><span>Je m'inscris en utilisant ce lien</span></div>
+          <a href="https://www.sporteasy.net/fr/join/PCRSTB9/" target="_blank" rel="noopener" class="btn btn-sm btn-turquoise">M'inscrire ↗</a>
+        </div>
+
+        <h3 style="margin:26px 0 14px; font-size:1.05rem;">Contacts</h3>
+        <div class="two-col" style="align-items:start;">
+          <div class="info-block">
+            <h3 style="font-size:1rem;">OVTT</h3>
+            <p>330 rue du Becquet, 76170 Lillebonne<br>07 49 10 02 94<br>contactovtt76@gmail.com</p>
+            <p style="margin-top:8px;">Facebook : OVTT Lillebonne<br>Instagram : @objectifvtt<br>Site : <a href="https://www.objectifvtt.fr/" target="_blank" rel="noopener" style="color:var(--c-blue);">objectifvtt.fr</a></p>
+          </div>
+          <div class="info-block turquoise">
+            <h3 style="font-size:1rem;">Comité de Normandie</h3>
+            <p>55 rue du Général Moulin, 14000 Caen<br>02 31 53 41 00<br><a href="https://www.normandiecyclisme.fr/" target="_blank" rel="noopener" style="color:var(--c-blue);">normandiecyclisme.fr</a></p>
+          </div>
+        </div>
+
+        <div class="form-nav">
+          <button type="button" class="btn btn-outline" data-prev>← Santé &amp; autorisations</button>
+          <button type="submit" class="btn btn-red">Envoyer mon bulletin d'adhésion</button>
+        </div>
+      </div>
+
+    </form>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+<script src="js/firebase.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
